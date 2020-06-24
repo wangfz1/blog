@@ -23,62 +23,53 @@ $assets = AppAsset::register($this);
         <link rel="stylesheet" href="<?= $v ?>">
     <?php endforeach; ?>
 </head>
-<body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
-    <div class="layui-header" style="margin: 0 0 0 200px">
-        <div class="layui-logo">layui 后台布局</div>
-        <!-- 头部区域（可配合layui已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">商品管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">其它系统</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
-                </dl>
-            </li>
-        </ul>
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    贤心
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item"><a href="">退了</a></li>
-        </ul>
-    </div>
+<body class="layui-layout-body" style="background-image:url('pics/shanghai.jpg');">
+<div class="layui-layout layui-layout-admin" style="">
+<!--    <div class="layui-header" style="margin-left: 400px;height:150px;opacity: 70%">-->
+<!--        <ul class="layui-nav layui-layout-left">-->
+<!--            <li class="layui-nav-item"><a href="">控制台</a></li>-->
+<!--            <li class="layui-nav-item"><a href="">商品管理</a></li>-->
+<!--            <li class="layui-nav-item"><a href="">用户</a></li>-->
+<!--            <li class="layui-nav-item">-->
+<!--                <a href="javascript:;">其它系统</a>-->
+<!--                <dl class="layui-nav-child">-->
+<!--                    <dd><a href="">邮件管理</a></dd>-->
+<!--                    <dd><a href="">消息管理</a></dd>-->
+<!--                    <dd><a href="">授权管理</a></dd>-->
+<!--                </dl>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
 
-    <div class="layui-side layui-bg-black" style="margin-top: -60px;">
-        <div class="layui-side-scroll">
-            <ul class="layui-nav layui-nav-tree">
-                <li class="" style="height:200px;"><img src="http://t8.baidu.com/it/u=1484500186,1503043093&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1593529552&t=15cf65e1e6c3e0f524c9b80ddfae0107" /></li>
+    <div class="layui-side layui-bg-black" style="margin-top: -60px;width:400px;opacity: 85%">
+        <div class="layui-side-scroll" style="width: 400px;">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                <legend style="color: white">Fanzhou Wang</legend>
+            </fieldset>
+            <ul class="layui-nav layui-nav-tree"  style="width: 400px;height:85%;background-image: inherit">
+                <img src = "pics/avatar.jpg" class="layui-circle"  style="width: 320px;height:38%;margin:20px 40px 20px 40px;"/>
+
+                <li class="layui-nav-item" style="margin:0 0 50px 50px"><a href="/education" style="font-size: 25px;"><img src="svg/education.svg" style="padding-bottom:5px;height:100%;width:45px"/> Education</a></li>
+                <li class="layui-nav-item" style="margin:0 0 50px 50px"><a href="/interests" style="font-size: 25px"><img src="svg/interest.svg" style="padding-bottom:5px;height:100%;width:45px"/> Interests</a></li>
+                <li class="layui-nav-item" style="margin:0 0 50px 50px"><a href="/travels" style="font-size: 25px"><img src="svg/travel.svg" style="padding-bottom:5px;height:100%;width:45px"/> Travels</a></li>
             </ul>
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item" style="margin-top: "><a href="">发布商品</a></li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
+
+            <ul class="layui-nav layui-row"  style="width: 400px;background-image: inherit">
+                <li class="layui-nav-item">
+                    <a href="/education" style=""><img src="svg/instagram.svg" style="padding-bottom:5px;height:100%;width:45px"/> <b>insta</b></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="/education" style=""><img src="svg/webo.svg" style="padding-bottom:5px;height:100%;width:45px"/> <b>webo</b></a>
+                </li>
             </ul>
         </div>
     </div>
 
-    <div class="layui-body">
+    <div class="layui-body" style="margin:-40px 20px -30px 220px;background-color: white;opacity: 80%">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">内容主体区域</div>
     </div>
 
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
-    </div>
 </div>
 <?php foreach($assets->js as $v) :?>
     <script src="<?= $v ?>"></script>
