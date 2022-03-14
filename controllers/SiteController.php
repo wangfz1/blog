@@ -62,6 +62,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        header('Access-Control-Allow-Origin: *');
+
+        header('Access-Control-Allow-Methods: GET, POST');
+
+        header("Access-Control-Allow-Headers: X-Requested-With");
+        
         return json_encode(['code' => 200, 'css' => "fontSize: 100px, color: black"]);
         $result_1 = (new Query())->select('*')->from('member')->all(Yii::$app->db);
         $result_2 = Yii::$app->db->createCommand("select id from member")->queryAll();
