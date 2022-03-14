@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\db\Query;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -61,6 +62,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        return json_encode(['code' => 200, 'css' => "fontSize: this.finalSize +'px', color: this.finalColor"]);
+        $result_1 = (new Query())->select('*')->from('member')->all(Yii::$app->db);
+        $result_2 = Yii::$app->db->createCommand("select id from member")->queryAll();
+
+        dd($result_1, $result_2);
+
+        return json_encode(['code' => 200, 'data' => $data, 'msg' => $z1.$data.(1111)]);
         return $this->render('index');
     }
 
