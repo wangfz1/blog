@@ -37,17 +37,13 @@ class SiteController extends Controller
                 ],
             ],
             'corsFilter' => [
-                'class' => \yii\filters\Cors::class,
+                'class' => \yii\filters\Cors::className(),
                 'cors' => [
                     // restrict access to
-                    'Origin' => ['http://www.myserver.com', 'https://www.myserver.com'],
-
-                    'Access-Control-Allow-Origin' => ['http://localhost:8080'],
+                    'Access-Control-Request-Method' => ['*'],
                     // Allow only POST and PUT methods
-                    'Access-Control-Request-Method' => ['POST', 'PUT', 'GET', 'DELETE'],
-                    // Allow only headers 'X-Wsse'
                     'Access-Control-Request-Headers' => ['*'],
-                    // Allow credentials (cookies, authorization headers, etc.) to be exposed to the browser
+                    // Allow only headers 'X-Wsse'
                     'Access-Control-Allow-Credentials' => true,
                     // Allow OPTIONS caching
                     'Access-Control-Max-Age' => 3600,
